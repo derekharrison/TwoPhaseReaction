@@ -11,7 +11,7 @@
 #include "user_types.hpp"
 
 double ra(double Ca) {
-	/* Reaction rate law */
+    /* Reaction rate law */
     double kr = 1.0;
     return -kr*Ca*Ca/(1+Ca);
 }
@@ -47,14 +47,12 @@ int main(int argc, char* argv[]) {
     solver_data.x_c = new double[grid_params.N];
 
     /* Execute solver */
-	solver(grid_params, physical_params, time_data, &solver_data);
+    solver(grid_params, physical_params, time_data, &solver_data);
 
     /* Print results */
     for(int i = 0; i < grid_params.N; ++i) {
         printf("x: %f, Cag: %f, Cal: %f\n", solver_data.x_c[i], solver_data.Cag[i], solver_data.Cal[i]);
     }
-
-    printf("done\n");
 
     return 0;
 }
