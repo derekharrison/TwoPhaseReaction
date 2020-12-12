@@ -54,5 +54,10 @@ int main(int argc, char* argv[]) {
         printf("x: %f, Cag: %f, Cal: %f\n", solver_data.x_c[i], solver_data.Cag[i], solver_data.Cal[i]);
     }
 
+    /* Deallocate memory */
+    delete [] solver_data.Cag;
+    delete [] solver_data.Cal;
+    delete [] solver_data.x_c;
+
     return 0;
 }
